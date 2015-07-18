@@ -20,10 +20,12 @@ def stockCheck(symbol):
         content = urllib.urlopen(base_url + symbol).read()
         location = content.lower().find('values:["' + symbol + '"')
         [price,increase] = content[location:location+200].split('","')[2:4]
-    print price, increase
+        increasePc = str(round(100.0*float(increase[1:])/float(price),2))+'%'
+    print '%+7s %+6s (%+6s )' % (price, increase,increasePc)
 
-stockCheck('oil')
+#stockCheck('oil')
 stockCheck('aapl')
+stockCheck('msft')
 stockCheck('nrg')
 stockCheck('goog')
 stockCheck('amzn')
@@ -33,10 +35,11 @@ stockCheck('lnkd')
 
 #symbol = 'linkedin'
 #base_url = 'http://finance.google.com/finance?q='
-#ontent = urllib.urlopen(base_url + symbol).read()
+#content = urllib.urlopen(base_url + symbol).read()
 #location = content.lower().find('values:["' + symbol + '"')
 #content[location-50:location+50]
 
 
-
+nrg = 26.13*90
+msft = 46.01*100
 
