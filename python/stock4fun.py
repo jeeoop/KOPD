@@ -7,6 +7,7 @@ Created on Wed Apr 29 10:56:48 2015
 """
 
 import urllib
+import time
 
 def stockCheck(symbol):
     if symbol.lower() == 'oil':
@@ -23,14 +24,27 @@ def stockCheck(symbol):
         increasePc = str(round(100.0*float(increase[1:])/float(price),2))+'%'
     print '%+7s %+6s (%+6s )' % (price, increase,increasePc)
 
+def printWithDelay(x):
+    try:
+        x
+    except:
+        try:
+            time.sleep(2)
+            x
+        except:
+            time.sleep(2)
+            x
+
+
+
 #stockCheck('oil')
-stockCheck('aapl')
-stockCheck('msft')
-stockCheck('nrg')
-stockCheck('goog')
-stockCheck('amzn')
-stockCheck('baba')
-stockCheck('lnkd')
+printWithDelay(stockCheck('aapl'))
+printWithDelay(stockCheck('msft'))
+printWithDelay(stockCheck('nrg'))
+printWithDelay(stockCheck('goog'))
+printWithDelay(stockCheck('amzn'))
+printWithDelay(stockCheck('baba'))
+printWithDelay(stockCheck('lnkd'))
 
 
 #symbol = 'linkedin'
