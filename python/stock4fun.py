@@ -36,7 +36,6 @@ def printWithDelay(x):
             x
 
 
-
 #stockCheck('oil')
 printWithDelay(stockCheck('aapl'))
 printWithDelay(stockCheck('msft'))
